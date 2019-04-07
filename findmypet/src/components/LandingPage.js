@@ -6,7 +6,7 @@ import { Row, Col, Button } from 'react-bootstrap';
 
 export default function LandingPage() {
     return(
-            <div className='container'>
+            <div className='container landing-container'>
                 <Row className='' >
                     <Col className='' xs={4} sm={4} >
                         <h1 className='app-title'>Find My pet</h1>
@@ -26,7 +26,8 @@ export default function LandingPage() {
                     </Col>
                 </Row>
                 <Row>
-                    <Col>
+                    <Col xs={5} sm={5}>
+                        <img src='https://support.apple.com/library/content/dam/edam/applecare/images/en_US/iOS/ios12-iphone-x-take-a-screenshot-animation.gif'></img>
                     </Col>
                     <Col xs={7} sm={7}>
                         <h2>Solicita ayuda</h2>
@@ -37,12 +38,14 @@ export default function LandingPage() {
                     <Col xs={7} sm={7}>
                         <h2>Reporta avistamiento</h2>
                         <p>Si ves a un animal extraviado, avísale a todos, quizá su humano este buscándolo</p>
-                    </Col> 
-                    <Col>
+                    </Col >
+                    <Col xs={5} sm={5}>
+                        <img src='https://support.apple.com/library/content/dam/edam/applecare/images/en_US/iOS/ios12-iphone-x-take-a-screenshot-animation.gif'></img>
                     </Col>
                 </Row>
                 <Row>
-                    <Col>
+                    <Col xs={5} sm={5}>
+                        <img src='https://support.apple.com/library/content/dam/edam/applecare/images/en_US/iOS/ios12-iphone-x-take-a-screenshot-animation.gif'></img>
                     </Col>
                     <Col xs={7} sm={7}>
                         <h2>Resguarda</h2>
@@ -58,7 +61,8 @@ export default function LandingPage() {
                             de adopción.
                         </p>
                     </Col> 
-                    <Col>
+                    <Col xs={5} sm={5}>
+                        <img src='https://support.apple.com/library/content/dam/edam/applecare/images/en_US/iOS/ios12-iphone-x-take-a-screenshot-animation.gif'></img>
                     </Col>
                 </Row>
             </div>
