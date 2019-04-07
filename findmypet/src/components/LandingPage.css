@@ -1,0 +1,14 @@
+.logo-img {
+    height: 100px;
+    width: 100px;
+}
+
+.app-title {
+    font-size: 2em;
+}
+
+.sign-in-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
