@@ -1,10 +1,31 @@
-footer {
+/* footer {
     position: fixed;
     bottom: 0;
     width: 100%;
     margin-left: 0;
     margin-right: 0;
+} */
+
+footer {
+  background-color: #24242E;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
+
+.border-nav {
+  border-radius: 50px;
+  transition: all 0.4s;
+}
+
+.btn-hover:hover {
+  background-color: #2e2f3d;
+}
+.btn-hover:active {
+  background-color: #2e2f3d;
+}
+
 
 .navbar-menu{
     width: 100%;
