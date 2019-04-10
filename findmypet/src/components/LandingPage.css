@@ -1,5 +1,11 @@
 .landing-container {
-    padding: 
+    padding: 0
+}
+
+.header-container {
+    align-items: center;
+    margin: 0 0;
+    padding: 0 5px;
 }
 
 .logo-img {
@@ -11,10 +17,19 @@
     font-size: 2em;
 }
 
+@media screen and (max-width: 426px) {
+    .app-title {
+        font-size: 1em;
+    }
+}
+
+
 .sign-in-container {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    margin: 0 0;
+    padding: 0 0;
 }
 
 img {
