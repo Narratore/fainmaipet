@@ -5,7 +5,8 @@ import Navbar from './components/Navbar';
 import Feed from './components/Feed'
 import Report from './components/Report'
 import Header from './components/Header'
-import { Router } from '@reach/router'
+import { Router, Redirect } from '@reach/router'
+import NotFound from './components/NotFound';
 
 class App extends Component {
   render() {
@@ -13,9 +14,11 @@ class App extends Component {
       <div className="App">
         <Header/>
         <Router>
+          <NotFound default/>
           <LandingPage path='landing'/>
           <Feed path='feed' />
           <Report path='reportes/:reportid' />
+        <Redirect from="/" to="feed" noThrow/>
         </Router>
           <Navbar/>
       </div>
