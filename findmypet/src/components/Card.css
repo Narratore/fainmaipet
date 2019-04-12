@@ -1,0 +1,19 @@
+.card {
+    width: 100%;
+    margin: 10px;
+}
+
+@media screen and (max-width: 426px) {
+    .card-img-top {
+        max-height: 50vh;
+        width: auto;
+        object-fit: cover;
+    }
+}
+@media screen and (min-width: 426px) {
+    .card-img-top {
+        max-height: 30vh;
+        width: auto;
+        object-fit: cover;
+    }
+}
