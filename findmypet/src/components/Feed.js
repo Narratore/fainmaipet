@@ -1,39 +1,30 @@
 import React from 'react'
 import './Feed.css'
+import { useFetch } from './hooks'
 
-import { Row, Col, Button } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import Card from './Card'
 
 
+
 export default function Feed() {
+    
+    const [data, loading] = useFetch(
+        "http://localhost:8000/api/publication/"
+      );
+
     return(
         <div className='container'>
-            <Row className='card-deck'>
-                <Col xs={12} sm={12} md={4} lg={4} xl={3}>
-                    <Card />
-                </Col>
-                <Col xs={12} sm={12} md={4} lg={4} xl={3}>
-                    <Card />
-                </Col>
-                <Col xs={12} sm={12} md={4} lg={4} xl={3}>
-                    <Card />
-                </Col>
-                <Col xs={12} sm={12} md={4} lg={4} xl={3}>
-                    <Card />
-                </Col>
-                <Col xs={12} sm={12} md={4} lg={4} xl={3}>
-                    <Card />
-                </Col>
-                <Col xs={12} sm={12} md={4} lg={4} xl={3}>
-                    <Card />
-                </Col>
-                <Col xs={12} sm={12} md={4} lg={4} xl={3}>
-                    <Card />
-                </Col>
-                <Col xs={12} sm={12} md={4} lg={4} xl={3}>
-                    <Card />
-                </Col>
-            </Row>
+            <h1>Feed</h1>
+            { loading ? ("Loading...") : (
+                <Row className='card-deck' >
+                    {data.map((report)=>
+                        <Col xs={12} sm={12} md={4} lg={4} xl={3} key={report.id}>
+                            <Card data={report} />
+                        </Col>
+                        )}
+                </Row>
+            ) }
         </div>
     )
 }

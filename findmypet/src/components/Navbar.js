@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
-import { Row, Col, Button } from 'react-bootstrap';
+import React  from 'react'
+// import { Row, Col, Button } from 'react-bootstrap';
 import IconCollar from './svg/SvgCollar';
 import IconDogHouse from './svg/SvgDogHouse';
 import IconMegaphone from './svg/IconMegaphone';
 import IconPlaceholder from './svg/IconPlaceholder';
+import { Link } from '@reach/router'
 import './Navbar.css'
 
 export default function Navbar() {
@@ -14,16 +15,24 @@ export default function Navbar() {
           <div className="col">
            <div className="row">
               <div className="col p-2 border-nav btn-hover">
-                <IconDogHouse fill="white" />
+                <Link to='feed'>
+                  <IconDogHouse fill="white" />
+                </Link>
               </div>
               <div className="col p-2 border-nav btn-hover">
-                <IconMegaphone fill="white" />
+                <Link to='report'>
+                  <IconMegaphone fill="white" />
+                </Link>
               </div>
               <div className="col p-2 border-nav btn-hover">
-                <IconPlaceholder fill="white" />
+                <Link to='map'>
+                  <IconPlaceholder fill="white" />
+                </Link>
               </div>
               <div className="col p-2 border-nav btn-hover">
-                <IconCollar fill="white" />
+                <Link to='adopt'>
+                  <IconCollar fill="white" />
+                </Link>
               </div>
            </div>
           </div>
