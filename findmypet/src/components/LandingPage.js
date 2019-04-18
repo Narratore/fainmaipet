@@ -1,23 +1,12 @@
 import React from 'react'
 import './LandingPage.css'
-import logo from '../media/images/logo.png'
-import { Row, Col, Button } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
+
 
 
 export default function LandingPage() {
     return(
             <div className='container landing-container'>
-                <Row className='header-container container' >
-                    <Col xs={3} sm={3} >
-                        <img src={logo} className='logo-img'  /> 
-                    </Col>
-                    <Col className='' xs={6} sm={6} >
-                        <h1 className='app-title'>Find My pet</h1>
-                    </Col>
-                    <Col className='sign-in-container' xs={3} sm={3} >
-                        <Button>Sign In</Button>
-                    </Col>
-                </Row>
                 <div className='container'>
                     <Row className='mt-5 mb-5'>
                         <Col>
@@ -28,7 +17,7 @@ export default function LandingPage() {
                     </Row>
                     <Row className='mt-5 mb-5'>
                         <Col xs={5} sm={5}>
-                            <img src='https://support.apple.com/library/content/dam/edam/applecare/images/en_US/iOS/ios12-iphone-x-take-a-screenshot-animation.gif'></img>
+                            <img src='https://support.apple.com/library/content/dam/edam/applecare/images/en_US/iOS/ios12-iphone-x-take-a-screenshot-animation.gif' alt='foto'></img>
                         </Col>
                         <Col xs={7} sm={7}>
                             <h2>Solicita ayuda</h2>
@@ -41,12 +30,12 @@ export default function LandingPage() {
                             <p>Si ves a un animal extraviado, avísale a todos, quizá su humano este buscándolo</p>
                         </Col >
                         <Col xs={5} sm={5}>
-                            <img src='https://support.apple.com/library/content/dam/edam/applecare/images/en_US/iOS/ios12-iphone-x-take-a-screenshot-animation.gif'></img>
+                            <img src='https://support.apple.com/library/content/dam/edam/applecare/images/en_US/iOS/ios12-iphone-x-take-a-screenshot-animation.gif' alt='foto'></img>
                         </Col>
                     </Row>
                     <Row className='mt-5 mb-5'>
                         <Col xs={5} sm={5}>
-                            <img src='https://support.apple.com/library/content/dam/edam/applecare/images/en_US/iOS/ios12-iphone-x-take-a-screenshot-animation.gif'></img>
+                            <img src='https://support.apple.com/library/content/dam/edam/applecare/images/en_US/iOS/ios12-iphone-x-take-a-screenshot-animation.gif' alt='foto'></img>
                         </Col>
                         <Col xs={7} sm={7}>
                             <h2>Resguarda</h2>
@@ -63,7 +52,7 @@ export default function LandingPage() {
                             </p>
                         </Col> 
                         <Col xs={5} sm={5}>
-                            <img src='https://support.apple.com/library/content/dam/edam/applecare/images/en_US/iOS/ios12-iphone-x-take-a-screenshot-animation.gif'></img>
+                            <img src='https://support.apple.com/library/content/dam/edam/applecare/images/en_US/iOS/ios12-iphone-x-take-a-screenshot-animation.gif' alt='foto'></img>
                         </Col>
                     </Row>
                 </div>
