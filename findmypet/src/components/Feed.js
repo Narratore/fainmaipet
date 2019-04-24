@@ -4,14 +4,20 @@ import { useFetch } from './hooks'
 import Loader from 'react-loader-spinner'
 import { Row, Col } from 'react-bootstrap';
 import Card from './Card'
+import getLocation from './getLocation'
 
 
 
 export default function Feed() {
+
+    const location = getLocation()
+
     
     const [data, loading] = useFetch(
         "http://localhost:8000/api/publication/"
       );
+      
+      console.log(location)
 
     return(
         <div className='container'>
