@@ -13,19 +13,14 @@ export default function Form() {
             setFormValidity(true)
             return
         }
-        setFormValidity(false)
         
+        setFormValidity(false)
         const data = {
             'fields': {
-                'ID': 'AgregaWeb',
                 'Nombre Completo' : name,
                 'Email': email,
-                'Teléfono': phone,
-                'Tipo de evento': eventType
             }    
         }
-
-
         fetch("URL A HACER FECTH", {
             method: 'POST',
             headers: {
@@ -45,8 +40,6 @@ export default function Form() {
     
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
-    const [eventType, setEvent] = useState("");
     const [apiResponse, setAPIResponse] = useState("")
     const [formValidity, setFormValidity] = useState("")
 
@@ -69,23 +62,6 @@ if (apiResponse === ""){
                                 <label htmlFor="colFormLabelLg" className="col-sm-2 col-lg-2 col-xl-2 col-form-label col-form-label-lg d-none d-md-block form-label" >Email</label>
                                 <div className="col-sm-10 col-md-8" >
                                 <input type='email' value={email} onChange={e => setEmail(e.target.value)} name="email" className="form-control form-control-lg" id="colFormLabelLg"  placeholder="Correo" required/>
-                                </div>
-                            </Row>
-                            <Row className="form-group" >
-                                <label htmlFor="colFormLabelLg" className="col-sm-2 col-lg-2 col-xl-2 col-form-label col-form-label-lg d-none d-md-block form-label" >Teléfono</label>
-                                <div className="col-sm-10 col-md-8" >
-                                <input type="tel" value={phone} onChange={e => setPhone(e.target.value)} name="phone" className="form-control form-control-lg" id="colFormLabelLg"  placeholder="Teléfono" required/>
-                                </div>
-                            </Row>
-                            <Row className="form-group" >
-                                <label htmlFor="colFormLabelLg" className="col-sm-2 col-lg-2 col-xl-2 col-form-label col-form-label-lg d-none d-md-block form-label" >Tipo de evento</label>
-                                <div className="col-sm-10 col-md-8" >
-                                    <select className="custom-select" value={eventType} onChange={e => setEvent(e.target.value)} name="eventType" id="inlineFormCustomSelect" form="quoteForm" required >
-                                        <option className='col-md-2' defaultValue>Tipo de Evento</option>
-                                        <option value="Social">Social</option>
-                                        <option value="Masivo">Masivo</option>
-                                        <option value="Corporativo">Corporativo</option>
-                                    </select>
                                 </div>
                             </Row>
                             <Row className='submit-button-container form-group'>
