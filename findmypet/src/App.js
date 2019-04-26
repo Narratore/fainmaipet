@@ -19,7 +19,7 @@ class App extends Component {
           <NotFound default/>
           <LandingPage path='landing'/>
           <Feed path='feed' />
-          <Report path='reportes/:reportid' />
+          <Report path='report' />
         <Redirect from="/" to="feed" noThrow/>
         </Router>
           <Navbar/>
