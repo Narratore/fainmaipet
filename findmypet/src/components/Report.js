@@ -6,7 +6,7 @@ import { Link } from '@reach/router'
 export default function Report(props) {
 
     const [data, loading] = useFetch(
-        ("http://localhost:8000/api/publication/"+props.reportid)+'/'
+        ("https://cryptic-scrubland-58057.herokuapp.com/api/publication/"+props.reportid)+'/'
       );
 
     return(
