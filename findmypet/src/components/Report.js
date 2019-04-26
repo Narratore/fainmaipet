@@ -90,7 +90,7 @@ if (apiResponse === ""){
                                 </div>
                             </Row>
                             <Row className="form-group" >
-                                <label htmlFor="colFormLabelLg" className="col-sm-2 col-lg-2 col-xl-2 col-form-label col-form-label-lg d-none d-md-block form-label" >Tamañ<object data="" type=""></object></label>
+                                <label htmlFor="colFormLabelLg" className="col-sm-2 col-lg-2 col-xl-2 col-form-label col-form-label-lg d-none d-md-block form-label" >Tamaño<object data="" type=""></object></label>
                                 <div className="col-sm-10 col-md-8" >
                                     <select className="custom-select" value={size} onChange={e => setSize(e.target.value)} name="size" id="inlineFormCustomSelect" form="quoteForm" required >
                                         <option className='col-md-2' defaultValue>Tamaño</option>
