@@ -1,0 +1,13 @@
+.displayError input:invalid{
+    border-color: red !important;
+}
+
+.waiting-for-password {
+    display: none
+}
+.invalid-password {
+    color: red;
+}
+.no-good-length-password{
+    color: red;
+}
