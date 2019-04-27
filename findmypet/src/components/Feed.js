@@ -14,7 +14,7 @@ export default function Feed() {
 
     
     const [data, loading] = useFetch(
-        "http://localhost:8000/api/publication/"
+        "https://cryptic-scrubland-58057.herokuapp.com/api/publication/"
       );
       
       console.log(location)

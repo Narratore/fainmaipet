@@ -21,6 +21,9 @@ export default function Header() {
                         <Link to='signin'>
                             <Button>Sign In</Button>
                         </Link>
+                        <Link to='signup'>
+                            <Button>Sign Up</Button>
+                        </Link>
                     </Col>
                 </Row>
             </div>

@@ -24,7 +24,7 @@ export default function NotFound() {
                 <div>
                     <h1>Vaya! Parece que aquí no hay nada!</h1>
                     <h2>Pero no te preocupes, aquí tenemos esta foto de un perrito para ti</h2>
-                    <Img style={{height:'90vw', width:'90vw', objectFit: 'cover'}} 
+                    <Img style={{height:'60vh', width:'auto', objectFit: 'cover'}} 
                         src={data.message} 
                         alt="random dog" 
                         loader={<Loader 

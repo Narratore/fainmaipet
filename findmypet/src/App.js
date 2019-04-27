@@ -7,6 +7,8 @@ import Report from './components/Report'
 import Header from './components/Header'
 import { Router, Redirect } from '@reach/router'
 import NotFound from './components/NotFound';
+import Profile from './components/Profile';
+import SignUp from './components/SignUp'
 
 
 class App extends Component {
@@ -17,6 +19,8 @@ class App extends Component {
         <Header/>
         <Router>
           <NotFound default/>
+          <SignUp path='signup' />
+          <Profile path='profile' />
           <LandingPage path='landing'/>
           <Feed path='feed' />
           <Report path='report' />
