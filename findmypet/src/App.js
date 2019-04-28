@@ -23,7 +23,7 @@ class App extends Component {
           <Profile path='profile' />
           <LandingPage path='landing'/>
           <Feed path='feed' />
-          <Report path='reportes/:reportid' />
+          <Report path='report' />
         <Redirect from="/" to="feed" noThrow/>
         </Router>
           <Navbar/>
