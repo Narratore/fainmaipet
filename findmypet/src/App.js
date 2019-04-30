@@ -9,6 +9,8 @@ import { Router, Redirect } from '@reach/router'
 import NotFound from './components/NotFound';
 import Profile from './components/Profile';
 import SignUp from './components/SignUp'
+import Publication from './components/Publication'
+import { puts } from 'util';
 
 
 class App extends Component {
@@ -24,6 +26,7 @@ class App extends Component {
           <LandingPage path='landing'/>
           <Feed path='feed' />
           <Report path='report' />
+          <Publication path='publication/:reportid'/>
         <Redirect from="/" to="feed" noThrow/>
         </Router>
           <Navbar/>

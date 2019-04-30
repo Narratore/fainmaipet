@@ -14,10 +14,10 @@ export default function Feed() {
 
     
     const [data, loading] = useFetch(
-        "https://cryptic-scrubland-58057.herokuapp.com/api/publication/"
+        "https://find-my-pet2.herokuapp.com/api/publication/"
       );
       
-      console.log(location)
+
 
     return(
         <div className='container'>

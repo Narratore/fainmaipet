@@ -9,14 +9,14 @@ import Loader from 'react-loader-spinner'
 export default function Card(props) {
     
     const idNumber = props.data.id
-    const idLink = '/reportes/'+idNumber.toString()
+    const idLink = '/publication/'+idNumber.toString()
 
 
     return(
         <div className="card">
             <p className='text-muted'> Visto en { props.data.location } </p>
             <Img className="card-img-top" 
-                src='https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=339&q=80 339w' 
+                src={ props.data.snapshot} 
                 alt="Card cap"
                 loader={<Loader 
                     type="Puff"
@@ -27,7 +27,7 @@ export default function Card(props) {
                 <h5 className="card-title">{ props.data.title }</h5>
                 <p className="card-text">{ props.data.description }</p>
                 <Link to={idLink}>
-                    <button className="btn btn-primary">Go somewhere</button>
+                    <button className="btn btn-primary">Ver reporte</button>
                 </Link>
             </div>
          </div>
