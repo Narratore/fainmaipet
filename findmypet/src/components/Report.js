@@ -30,7 +30,7 @@ export default function Form() {
         }
 
 
-        fetch("URL A HACER FECTH", {
+        fetch("https://find-my-pet2.herokuapp.com/api/publication/", {
             method: 'POST',
             headers: {
                 'Authorization': '',
@@ -66,70 +66,90 @@ if (apiResponse === ""){
                 <Row className='form-container' >
                     <Col className= 'sm-10'>
                         <h2 className='form-title' >Reporte</h2>
-                        <form style={{maxWidth:'100%', padding: '0 20px'}} autoComplete="on" onSubmit={handleSubmit}  id="quoteForm" noValidate className={ formValidity ? 'displayError' : '' }>
-                        <Row className="form-group" >
-                                <label htmlFor="colFormLabelLg" className="col-sm-2 col-lg-2 col-xl-2 col-form-label col-form-label-lg d-none d-md-block form-label" >Tipo de Reporte</label>
-                                <div className="col-sm-10 col-md-8" >
-                                    <select className="custom-select" value={report_type} onChange={e => setReport(e.target.value)} name="report_type" id="inlineFormCustomSelect" form="quoteForm" required >
-                                        <option className='col-md-2' defaultValue>Viste o perdiste</option>
-                                        <option value="Se Busca">Se Busca</option>
-                                        <option value="Avistamiento">Avistamiento</option>
-                                    </select>
-                                </div>
-                            </Row>
+                        <form style={{maxWidth:'100%', padding: '0 20px'}} autoComplete="on" 
+                            onSubmit={handleSubmit}  id="quoteForm" noValidate className={ 
+                                formValidity ? 'displayError' : '' }>
                             <Row className="form-group" >
-                                <label htmlFor="colFormLabelLg" className="col-sm-2 col-lg-2 col-xl-2 col-form-label col-form-label-lg d-none d-md-block form-label" >Título</label>
+                                <label htmlFor="colFormLabelLg" 
+                                    className="col-sm-2 col-lg-2 col-xl-2 col-form-label 
+                                    col-form-label-lg d-none d-md-block form-label" >
+                                    Tipo de Reporte</label>
                                 <div className="col-sm-10 col-md-8" >
-                                    <input type="text" value={title} onChange={e => setTitle(e.target.value)} name="title" className="form-control form-control-lg"  id="colFormLabelLg" placeholder="Ponle título" autoComplete="name" required/>
-                                </div>
-                            </Row>
+                                    <select className="custom-select" value={report_type} onChange={
+                                        e => setReport(e.target.value)} name="report_type" 
+                                        id="inlineFormCustomSelect" form="quoteForm" required >
+                                    <option className='col-md-2' defaultValue>Viste o perdiste</option>
+                                    <option value="Se Busca">Se Busca</option>
+                                    <option value="Avistamiento">Avistamiento</option></select></div></Row>
                             <Row className="form-group" >
-                                <label htmlFor="colFormLabelLg" className="col-sm-2 col-lg-2 col-xl-2 col-form-label col-form-label-lg d-none d-md-block form-label" >Descripción</label>
+                                <label htmlFor="colFormLabelLg" 
+                                    className="col-sm-2 col-lg-2 col-xl-2 col-form-label 
+                                    col-form-label-lg d-none d-md-block form-label" >
+                                    Título</label>
                                 <div className="col-sm-10 col-md-8" >
-                                <input type='text' value={description} onChange={e => setDescription(e.target.value)} name="description" className="form-control form-control-lg" id="colFormLabelLg"  placeholder="Cuéntanos como pasó" required/>
-                                </div>
-                            </Row>
+                                    <input type="text" value={title} onChange={
+                                        e => setTitle(e.target.value)} name="title" 
+                                        className="form-control form-control-lg"  id="colFormLabelLg" 
+                                        placeholder="Ponle título" autoComplete="name" required/></div></Row>
                             <Row className="form-group" >
-                                <label htmlFor="colFormLabelLg" className="col-sm-2 col-lg-2 col-xl-2 col-form-label col-form-label-lg d-none d-md-block form-label" >Tamaño<object data="" type=""></object></label>
+                                <label htmlFor="colFormLabelLg" className="col-sm-2 col-lg-2 col-xl-2 
+                                    col-form-label col-form-label-lg d-none d-md-block form-label" >
+                                    Descripción</label>
                                 <div className="col-sm-10 col-md-8" >
-                                    <select className="custom-select" value={size} onChange={e => setSize(e.target.value)} name="size" id="inlineFormCustomSelect" form="quoteForm" required >
+                                <input type='text' value={description} onChange={
+                                    e => setDescription(e.target.value)} name="description" 
+                                    className="form-control form-control-lg" id="colFormLabelLg"  
+                                    placeholder="Cuéntanos como pasó" required/></div></Row>
+                            <Row className="form-group" >
+                                <label htmlFor="colFormLabelLg" 
+                                    className="col-sm-2 col-lg-2 col-xl-2 col-form-label 
+                                    col-form-label-lg d-none d-md-block form-label" >
+                                    Tamaño<object data="" type=""></object></label>
+                                <div className="col-sm-10 col-md-8" >
+                                    <select className="custom-select" value={size} onChange={
+                                        e => setSize(e.target.value)} name="size" id="inlineFormCustomSelect" 
+                                        form="quoteForm" required >
                                         <option className='col-md-2' defaultValue>Tamaño</option>
                                         <option value="Diminuto">Diminuto</option>
                                         <option value="Pequeño">Pequeño</option>
                                         <option value="Mediano">Mediano</option>
                                         <option value="Grande">Grande</option>
-                                        <option value="Enorme">Enorme</option>
-                                    </select>
-                                </div>
-                            </Row>
+                                        <option value="Enorme">Enorme</option></select></div></Row>
                             <Row className="form-group" >
-                                <label htmlFor="colFormLabelLg" className="col-sm-2 col-lg-2 col-xl-2 col-form-label col-form-label-lg d-none d-md-block form-label" >Color</label>
+                                <label htmlFor="colFormLabelLg" 
+                                    className="col-sm-2 col-lg-2 col-xl-2 col-form-label col-form-label-lg 
+                                    d-none d-md-block form-label" >
+                                    Color</label>
                                 <div className="col-sm-10 col-md-8" >
-                                    <select className="custom-select" value={color} onChange={e => setColor(e.target.value)} name="color" id="inlineFormCustomSelect" form="quoteForm" required >
+                                    <select className="custom-select" value={color} onChange={
+                                        e => setColor(e.target.value)} name="color" id="inlineFormCustomSelect" 
+                                        form="quoteForm" required >
                                         <option className='col-md-2' defaultValue>Color</option>
                                         <option value="Negro">Negro</option>
                                         <option value="Blanco">Blanco</option>
                                         <option value="Café">Café</option>
                                         <option value="Miel">Miel</option>
-                                        <option value="Manchado">Manchado</option>
-                                    </select>
-                                </div>
-                            </Row>
+                                        <option value="Manchado">Manchado</option></select></div></Row>
                             <Row className="form-group" >
-                                <label htmlFor="colFormLabelLg" className="col-sm-2 col-lg-2 col-xl-2 col-form-label col-form-label-lg d-none d-md-block form-label" >Sexo</label>
+                                <label htmlFor="colFormLabelLg" className="col-sm-2 col-lg-2 col-xl-2 
+                                    col-form-label col-form-label-lg d-none d-md-block form-label" >
+                                    Sexo</label>
                                 <div className="col-sm-10 col-md-8" >
-                                    <select className="custom-select" value={gender} onChange={e => setGender(e.target.value)} name="gender" id="inlineFormCustomSelect" form="quoteForm" required >
+                                    <select className="custom-select" value={gender} onChange={
+                                        e => setGender(e.target.value)} name="gender" id="inlineFormCustomSelect" 
+                                        form="quoteForm" required >
                                         <option className='col-md-2' defaultValue>Sexo</option>
                                         <option value="Masculino">Masculino</option>
                                         <option value="Femenino">Femenino</option>
-                                        <option value="No definido">No definido</option>
-                                    </select>
-                                </div>
-                            </Row>
+                                        <option value="No definido">No definido</option></select></div></Row>
                             <Row className="form-group" >
-                                <label htmlFor="colFormLabelLg" className="col-sm-2 col-lg-2 col-xl-2 col-form-label col-form-label-lg d-none d-md-block form-label" >Raza</label>
+                                <label htmlFor="colFormLabelLg" className="col-sm-2 col-lg-2 col-xl-2 col-form-label 
+                                    col-form-label-lg d-none d-md-block form-label" >
+                                    Raza</label>
                                 <div className="col-sm-10 col-md-8" >
-                                    <select className="custom-select" value={breed} onChange={e => setBreed(e.target.value)} name="breed" id="inlineFormCustomSelect" form="quoteForm" required >
+                                    <select className="custom-select" value={breed} onChange={
+                                        e => setBreed(e.target.value)} name="breed" id="inlineFormCustomSelect" 
+                                        form="quoteForm" required >
                                         <option className='col-md-2' defaultValue>Raza</option>
                                         <option value="Labrador">Labrador</option>
                                         <option value="Pug">Pug</option>
@@ -138,28 +158,20 @@ if (apiResponse === ""){
                                         <option value="Bulldog">Bulldog</option>
                                         <option value="Schnauzer">Schnauzer</option>
                                         <option value="Cruza">Cruza</option>
-                                        <option value="Otro">Otro</option>
-                                    </select>
-                                </div>
-                            </Row>
+                                        <option value="Otro">Otro</option></select></div></Row>
                             <Row className="form-group" >
-                                <label htmlFor="colFormLabelLg" className="col-sm-2 col-lg-2 col-xl-2 col-form-label col-form-label-lg d-none d-md-block form-label" >Locación</label>
+                                <label htmlFor="colFormLabelLg" className="col-sm-2 col-lg-2 col-xl-2 col-form-label 
+                                    col-form-label-lg d-none d-md-block form-label" >
+                                    Locación</label>
                                 <div className="col-sm-10 col-md-8" >
-                                <input type="tel" value={location} onChange={e => setLocation(e.target.value)} name="location" className="form-control form-control-lg" id="colFormLabelLg"  placeholder="Donde lo encontraste" required/>
-                                </div>
-                            </Row>
+                                <input type="tel" value={location} onChange={
+                                    e => setLocation(e.target.value)} name="location" className="form-control form-control-lg" 
+                                    id="colFormLabelLg"  placeholder="Donde lo encontraste" required/></div></Row>
                             <Row className='submit-button-container form-group'>
-                                <div className="col-sm-10 col-md-8 offset-md-2 " style={{ display: 'flex', justifyContent: 'flex-end' }}  >
-                                    <Button type="submit" className='submit-button'>
-                                        Enviar
-                                    </Button>
-                                </div>
-                            </Row>
-                        </form>
-                    </Col>
-                </Row>
-            </div>
-        </div>
+                                <div className="col-sm-10 col-md-8 offset-md-2 " style={{ 
+                                    display: 'flex', justifyContent: 'flex-end' }}  >
+                                    <Button type="submit" className='submit-button'>Enviar</Button></div></Row>
+                        </form></Col></Row></div></div>
         )
     } else if (apiResponse === true) {
         return (
@@ -173,7 +185,6 @@ if (apiResponse === ""){
                             <p>Teléfono:  <br/>
                             Correo: </p>
                         </div>
-                        {/* <Button  className='correct-data-button' onClick={ () => setAirtableResponse('')}>Corregir datos</Button> */}
                     </Col>
                 </Row>
             </div>

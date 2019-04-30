@@ -52,33 +52,38 @@ export default function SignUp() {
                             <div className='container'>
                                 <Row className='form-container' >
                                     <Col className= 'sm-10'>
-                                        <h2 className='form-title' >Regístrate</h2>
-                                        <form style={{maxWidth:'100%', padding: '0 20px'}} autoComplete="on" onSubmit={handleSubmit}  id="quoteForm" noValidate className={ formValidity ? 'displayError' : '' }>
+                                        <h2 className='form-title' >Reagístrate</h2>
+                                        <form style={{maxWidth:'100%', padding: '0 20px'}} 
+                                            autoComplete="on" onSubmit={handleSubmit}  id="quoteForm" 
+                                            noValidate className={ formValidity ? 'displayError' : '' }>
                                             <Row className="form-group" >
-                                                <label htmlFor="colFormLabelLg" className="col-sm-2 col-lg-2 col-xl-2 col-form-label col-form-label-lg d-none d-md-block form-label" >Username</label>
+                                                <label htmlFor="colFormLabelLg" 
+                                                    className="col-sm-2 col-lg-2 col-xl-2 col-form-label 
+                                                    col-form-label-lg d-none d-md-block form-label" >
+                                                Username</label>
                                                 <div className="col-sm-10 col-md-8" >
-                                                <input type='name' value={username} onChange={e => setUserName(e.target.value)} name="username" className="form-control form-control-lg" autoComplete='username'  placeholder="Username" required/>
-                                                </div>
-                                            </Row>
+                                                <input type='name' value={username} onChange={
+                                                    e => setUserName(e.target.value)} 
+                                                    name="username" className="form-control form-control-lg" 
+                                                    autoComplete='username'  placeholder="Username" required/>
+                                                </div></Row>
                                             <Row className="form-group" >
-                                                <label htmlFor="colFormLabelLg" className="col-sm-2 col-lg-2 col-xl-2 col-form-label col-form-label-lg d-none d-md-block form-label" >Contraseña</label>
+                                                <label htmlFor="colFormLabelLg" 
+                                                    className="col-sm-2 col-lg-2 col-xl-2 col-form-label 
+                                                    col-form-label-lg d-none d-md-block form-label" >
+                                                    Contraseña</label>
                                                 <div className="col-sm-10 col-md-8" >
-                                                <input className='form-control form-control-lg' type='password' value={password} autoComplete='new-password' onChange={e => setPassword(e.target.value)} name="password" placeholder="Contraseña" required/>
-                                                </div>
-                                            </Row>
+                                                <input className='form-control form-control-lg' type='password' 
+                                                    value={password} autoComplete='new-password' onChange={
+                                                        e => setPassword(e.target.value)}
+                                                    name="password" placeholder="Contraseña" required/>
+                                                </div></Row>
                                             <Row className='submit-button-container form-group'>
-                                                <div className="col-sm-10 col-md-8 offset-md-2 " style={{ display: 'flex', justifyContent: 'flex-end' }}  >
+                                                <div className="col-sm-10 col-md-8 offset-md-2 " style={
+                                                        { display: 'flex', justifyContent: 'flex-end' }}  >
                                                     <Button type="submit" className='submit-button'>
-                                                        Registrarse
-                                                    </Button>
-                                                </div>
-                                            </Row>
-                                        </form>
-                                    </Col>
-                                </Row>
-                            </div>
-                        </div>
-                    </div>
+                                                    Registrarse</Button></div></Row>
+                                        </form></Col></Row></div></div></div>
         )
     } else if (apiResponse === false) {
         return(
