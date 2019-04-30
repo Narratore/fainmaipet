@@ -19,7 +19,7 @@ export default function Publication(props) {
                     </nav>
                     
                     <p>
-                        Perdido en: {data.location} <br/>
+                        Ubicación: {data.location} <br/>
                         {data.title}
                     </p>
                     <p>Creado el {data.created}</p>
