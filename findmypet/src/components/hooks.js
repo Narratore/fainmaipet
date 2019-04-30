@@ -4,7 +4,13 @@ function useFetch(url) {
   
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
-  
+   
+    var myHeader = new Headers()
+    var myInit = { method: 'GET',
+                headers: myHeader,
+                mode: 'cors',
+                cache: 'default' };
+
     function handleErrors(response) {
         if (!response.ok) {
             throw Error(response.statusText)
@@ -13,7 +19,7 @@ function useFetch(url) {
     }
 
     async function fetchUrl() {
-        await fetch(url)
+        await fetch(url, myInit)
             .then(handleErrors)
             .then(res => res.json())
             .then(json => setData(json))

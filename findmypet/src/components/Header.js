@@ -19,7 +19,7 @@ export default function Header() {
                     </Col>
                     <Col className='sign-in-container' xs={3} sm={3} >
                         <Link to='signin'>
-                            <Button>Sign In</Button>
+                            <Button style={{marginRight:5}}>Sign In</Button>
                         </Link>
                         <Link to='signup'>
                             <Button>Sign Up</Button>
