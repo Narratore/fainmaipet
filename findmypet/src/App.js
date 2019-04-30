@@ -10,7 +10,7 @@ import NotFound from './components/NotFound';
 import Profile from './components/Profile';
 import SignUp from './components/SignUp'
 import Publication from './components/Publication'
-import { puts } from 'util';
+import SignIn from './components/SignIn'
 
 
 class App extends Component {
@@ -22,6 +22,7 @@ class App extends Component {
         <Router>
           <NotFound default/>
           <SignUp path='signup' />
+          <SignIn path='signin' />
           <Profile path='profile' />
           <LandingPage path='landing'/>
           <Feed path='feed' />

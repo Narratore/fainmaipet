@@ -37,7 +37,7 @@ export default function SignUp() {
             }
 
 
-        fetch("https://cryptic-scrubland-58057.herokuapp.com/api/rest-auth/registration/", {
+        fetch("https://find-my-pet2.herokuapp.com/api/rest-auth/registration/", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -61,6 +61,7 @@ export default function SignUp() {
     const [apiResponse, setAPIResponse] = useState('')
     const [formValidity, setFormValidity] = useState("")
     const [goodPassword, setGoodPassword] = useState('')
+
     const [passwordLength, setPasswordLength] = useState('')
 
     if (apiResponse === '') {
