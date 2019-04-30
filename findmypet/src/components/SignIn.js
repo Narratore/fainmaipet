@@ -1,31 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import { Row, Col, Button } from 'react-bootstrap';
-import './Form.css'
+import './SignUp.css'
 
 
-
-export default function Form() {
-
+export default function SignUp() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        if (!event.target.checkValidity()){
-            setFormValidity(true)
-            return
-        }
-        
-        setFormValidity(false)
+       
         const data = {
-            'fields': {
-                'Nombre Completo' : name,
-                'Email': email,
-            }    
-        }
-        fetch("URL A HACER FECTH", {
+                'username': username,
+                'password': password,
+            }
+
+        fetch("https://find-my-pet2.herokuapp.com/api/rest-auth/login/", {
             method: 'POST',
             headers: {
-                'Authorization': '',
                 'Content-Type': 'application/json',
+
             },
             mode: "cors",
             body: JSON.stringify(data)
@@ -33,75 +25,71 @@ export default function Form() {
             
             .then((response) => {
                 if(response.ok) {
+                    var json = response.json()
+                    setCsrftokenState(json)
+                    console.log(csrftokenState)
                     setAPIResponse(true);
                 } else setAPIResponse(false)
             })
+            .catch(function displayError(err) {
+                console.log(err)
+            })
     }
-    
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [apiResponse, setAPIResponse] = useState("")
+
+
+    const [username, setUserName] = useState("");
+    const [password, setPassword] = useState("");
+    const [apiResponse, setAPIResponse] = useState('')
     const [formValidity, setFormValidity] = useState("")
+    const [csrftokenState, setCsrftokenState] = useState('')
 
 
-if (apiResponse === ""){
-    return (
-        <div className='formarea'>
+    if (apiResponse === '') {
+
+        return(
             <div className='container'>
-                <Row className='form-container' >
-                    <Col className= 'sm-10'>
-                        <h2 className='form-title' >Contacto</h2>
-                        <form style={{maxWidth:'100%', padding: '0 20px'}} autoComplete="on" onSubmit={handleSubmit}  id="quoteForm" noValidate className={ formValidity ? 'displayError' : '' }>
-                            <Row className="form-group" >
-                                <label htmlFor="colFormLabelLg" className="col-sm-2 col-lg-2 col-xl-2 col-form-label col-form-label-lg d-none d-md-block form-label" >Nombre</label>
-                                <div className="col-sm-10 col-md-8" >
-                                    <input type="text" value={name} onChange={e => setName(e.target.value)} name="name" className="form-control form-control-lg"  id="colFormLabelLg" placeholder="Nombre" autoComplete="name" required/>
-                                </div>
-                            </Row>
-                            <Row className="form-group" >
-                                <label htmlFor="colFormLabelLg" className="col-sm-2 col-lg-2 col-xl-2 col-form-label col-form-label-lg d-none d-md-block form-label" >Email</label>
-                                <div className="col-sm-10 col-md-8" >
-                                <input type='email' value={email} onChange={e => setEmail(e.target.value)} name="email" className="form-control form-control-lg" id="colFormLabelLg"  placeholder="Correo" required/>
-                                </div>
-                            </Row>
-                            <Row className='submit-button-container form-group'>
-                                <div className="col-sm-10 col-md-8 offset-md-2 " style={{ display: 'flex', justifyContent: 'flex-end' }}  >
-                                    <Button type="submit" className='submit-button'>
-                                        Cotizar
-                                    </Button>
-                                </div>
-                            </Row>
-                        </form>
-                    </Col>
-                </Row>
-            </div>
-        </div>
-        )
-    } else if (apiResponse === true) {
-        return (
-            <div className='thank-you-area'>
-                <Row>
-                    <Col xs={12} sm={12}>
-                        <h2 className='thankyou-title'>Gracias {name}!</h2>
-                        <div className='thankyou-text'>
-                            <p>Alguien de nuestro equipo se pondra en contacto</p>
-                            <br/>
-                            <p>Teléfono: {phone} <br/>
-                            Correo: {email}</p>
+                            <div className='formarea'>
+                            <div className='container'>
+                                <Row className='form-container' >
+                                    <Col className= 'sm-10'>
+                                        <h2 className='form-title' >Regístrate</h2>
+                                        <form style={{maxWidth:'100%', padding: '0 20px'}} autoComplete="on" onSubmit={handleSubmit}  id="quoteForm" noValidate className={ formValidity ? 'displayError' : '' }>
+                                            <Row className="form-group" >
+                                                <label htmlFor="colFormLabelLg" className="col-sm-2 col-lg-2 col-xl-2 col-form-label col-form-label-lg d-none d-md-block form-label" >Username</label>
+                                                <div className="col-sm-10 col-md-8" >
+                                                <input type='name' value={username} onChange={e => setUserName(e.target.value)} name="username" className="form-control form-control-lg" autoComplete='username'  placeholder="Username" required/>
+                                                </div>
+                                            </Row>
+                                            <Row className="form-group" >
+                                                <label htmlFor="colFormLabelLg" className="col-sm-2 col-lg-2 col-xl-2 col-form-label col-form-label-lg d-none d-md-block form-label" >Contraseña</label>
+                                                <div className="col-sm-10 col-md-8" >
+                                                <input className='form-control form-control-lg' type='password' value={password} autoComplete='new-password' onChange={e => setPassword(e.target.value)} name="password" placeholder="Contraseña" required/>
+                                                </div>
+                                            </Row>
+                                            <Row className='submit-button-container form-group'>
+                                                <div className="col-sm-10 col-md-8 offset-md-2 " style={{ display: 'flex', justifyContent: 'flex-end' }}  >
+                                                    <Button type="submit" className='submit-button'>
+                                                        Registrarse
+                                                    </Button>
+                                                </div>
+                                            </Row>
+                                        </form>
+                                    </Col>
+                                </Row>
+                            </div>
                         </div>
-                        <Button  className='correct-data-button' onClick={ () => setAirtableResponse('')}>Corregir datos</Button>
-                    </Col>
-                </Row>
-            </div>
-            )
-    } else return (
-        <div className='container thank-you-area'>
-            <Row>
-                <Col>
-                    <h2 className='thankyou-title'>Fallo El Fetch</h2>
-                    <p>Lo siento<br/></p>
-                </Col>
-            </Row>
-        </div>
+                    </div>
         )
-} 
+    } else if (apiResponse === false) {
+        return(
+            <div>
+                Hubo un error
+            </div>
+        )
+    } else 
+        return(
+            <div>
+                Gracias por registrarte
+            </div>
+        )
+}
